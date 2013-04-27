@@ -1,76 +1,6 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>注册</title>    
-    <link rel="stylesheet" type="text/css" href="/statics/css/bootstrap.css" /> 	
-    <link rel="stylesheet" type="text/css" href="/statics/index.css" />
-</head>
-<body>
- <!-- 网页头部-->
-   <!-- -->
-	<div class="container" id="head">
-		<div class="row">
-		     <div class="span3"><img src="/statics/image/logt2.jpg"></div>
-	        <div class="span6"><img src="/statics/image/x-3.jpg" ></div>
-        	<div class="span3">
-	         <form class="form-horizontal" id="hdform">
-        	       <input type="text" id="inputEmail" placeholder="账号" class="ipt"><br/>
-                <input type="password" id="inputPassword" placeholder="密码" class="ipt"> <br/>
-                <div class="row"> 
-                	<div class="span1">            
-	             		<button type="submit" class="btn " > 登陆</button>
-	             	</div>
-	             	<div class="span2">
-	       	    		<strong>|</strong>
-                		<a href="/register/">注册</a>
-                	</div>
-            </div>
-	    </form>
-	    </div>
-	    </div>	         
-    </div>
-   <!-- 导航条-->
-    <div id="headb" class="container"> 
-	         <div id="mulu" class="row">
-	             <div class="span4 offset4">
-	               <ul class="nav nav-pills">
-                 		<li class="active">	             
-                			<a href="/index/">首页</a>
-                		</li>
-                		<li class="active">
-               		 	<a href="#">活动</a>
-                  	</li>  
-                		<li class="active">
-                			<a href="#">好玩</a>
-                		</li>
-               		<li class="active">
-                			<a href="#">美味</a>
-                		</li>
-                		<li class="active">
-                			<a href="#">逛逛</a>
-                		</li>
-                	</ul> 
-                </div>
-               <!--搜索部分-->                           
-               <div class="span4">                    
-                <form class="form-search">
-                   
-                    <input type="text" class="input-medium search-query" placeholder="好友/活动/好玩/美味">
-                    <input type="submit" class="btn" value="搜索">
-                 
-                </form>                    
-               </div>                
-           </div> 
-     </div>
-  <!--面包屑-->
- 	<div>
-    	<ul class="breadcrumb">
-    		<li><a href="#">首页</a> <span class="divider">/</span></li>
-    		<li><a href="#">逛逛</a> <span class="divider">/</span></li>
-    		<li class="active"></li>
-    	</ul>
-   </div>
+{% extends "base_index.html" %}
+{% block title %}注册{% endblock %}
+{% block content %}
    
  <!--主体-->  
    <div id="zchead">
@@ -84,7 +14,7 @@
         <div class="span6">    	            
            <div class="row">
         	     <div class="span4 offset2">               
-                 <form method="post" >
+                 <form method="post" action="/register/">
                      {{uf.as_p}}
                     <input type="submit" value="注册" class="btn">                               
                   </form>             
@@ -99,14 +29,4 @@
         </div>                                          
        </div>    
     </div>
-   <hr/>
-<!-- 网页脚部-->
-   <div >
-     <div class="row">
-       <div class="span9 offset1">
-   <a href="" >关于我们</a>&nbsp;|&nbsp;<a href="" > 联系我们 </a>&nbsp;|&nbsp;<a href="" > 服务条款</a>&nbsp;|&nbsp;<a href="" > 常见问题</a>&nbsp;|&nbsp;<a href="" >手机版</a>&nbsp;|&nbsp;<a href="" >客户端</a>|&nbsp;<a href="" >加入我们</a>&nbsp;|&nbsp;<a href="" >给我们建议</a>&nbsp;|&nbsp;<a href="" >友情链接</a>&nbsp;|&nbsp;<a href="" >gerlaor周刊</a>&nbsp;|
-       </div>
-     </div>
-   </div>
-</body>
-</html>
+{%endblock%}

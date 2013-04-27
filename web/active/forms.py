@@ -9,6 +9,6 @@ class UserForm(forms.Form):
 
 
 class LoginForm(forms.Form):
-    username = forms.CharField(label='帐号')
+    username = forms.CharField(label='邮箱')
     password = forms.CharField(label='密码',widget=forms.PasswordInput)
  

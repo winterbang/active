@@ -1,63 +1,43 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8" />
-<title>编辑头像</title>
-<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-<link rel="stylesheet" type="text/css" href="/statics/css/bootstrap.css" />
-<link rel="stylesheet" type="text/css" href="index.css" />
-</head>
-<body>
-
-
-   <div class="container" id="head">
-      <div class="row">
-         <div class="span3">
-         </div>
-         
-         <div c<div class="span6">
-             <a href=""><i class="icon-home"></i>首页</a>
-         </div>
-         <div class="span3">
-            <a href="home.html"><i class="icon-user"></i>个人主页</a>
-            <a href="hold_act.html">组织活动</a>
-            <a href="user_info.html"><i class="icon-wrench"></i>管理</a>
-            <a href="">退出</a>
-         </div>
-         </div>
-      </div>
-   </div>
-   
-   <div>
-    	<ul class="breadcrumb">
-    		<li><a href="#">首页</a> <span class="divider">/</span></li>
-    		<li><a href="#">逛逛</a> <span class="divider">/</span></li>
-    		<li class="active"></li>
-    	</ul>
-   </div>
+{% extends "base1.html" %}
+{% block title %}编辑头像{% endblock %}
+{% block content %}
   
    <div class="container">
       <div class="row">
          <div class="span3" id="one">
-         <p><a href="user_info.html">个人资料</a></p>
-         <p><a href="face.html">编辑头像</a></p>
-         <a href="change_passwd.html">修改密码</a>
+         <p><a href="/user/user_info/">个人资料</a></p>
+         <p><a href="/user/face/">编辑头像</a></p>
+         <a href="/user/change_passwd/">修改密码</a>
          <a href=""></a>
          <a href=""></a>
          
          </div>
          <div class="span9" id="two">
+         {% if pd == 1 %}
+         头像上传错误
+         {% elif pd == 2 %}
+         头像修改成功
+         {% else %}
          编辑头像
+         {% endif %}
          <hr/>
-         <form method="post" enctype="multipart/form-data" action="">
-            <input type="file"> <br/>             
-            <input type="submit" value="保存" class="btn btn-info">                 
-         </form>
-         
+           <div class="row">
+              <div class="span4">
+                 <form method="post" enctype="multipart/form-data" action="/user/face/">
+                  <input type="file" name="hdimg"> <br/>             
+                  <input type="submit" value="保存" class="btn btn-info">                 
+                 </form>
+               </div>
+               {% if pd == 2 %}
+               <div class="span3">
+                 <img src="/static/{{uf.headimg}}">
+               </div>
+               {% endif %}
+           </div>         
          </div>
       </div>
    </div>
 
-
+{% endblock %}
 </body>
 </html>

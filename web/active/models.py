@@ -3,14 +3,14 @@ from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 class UserProfile(models.Model):
-    headimg = models.FileField(upload_to='./headimg/')
-    sex = models.CharField(max_length=1)
+    headimg = models.FileField(upload_to='./headimg/',blank=True,null=True)
+    sex = models.CharField(max_length=1,choices=(('m','man'),('w','woman'),),blank=True)
     user = models.ForeignKey(User,unique=True)
-    birthday = models.DateTimeField()
-    ip = models.CharField(max_length=20)
-    fllowp = models.ManyToManyField(User,verbose_name=u'关注',null=True,related_name='fp')
-    fllowa = models.ManyToManyField('Active',null=True)
-    joina = models.ManyToManyField('Active',null=True,related_name="ja")    
+    birthday = models.DateField(blank=True, null=True)
+    ip = models.CharField(max_length=20,blank=True)
+    fllowp = models.ManyToManyField(User,verbose_name=u'关注',blank=True,related_name='fp')
+    fllowa = models.ManyToManyField('Active',blank=True)
+    joina = models.ManyToManyField('Active',blank=True,related_name="ja")    
     def fpnum():
         return self.fllowp.count()
     def fanum():

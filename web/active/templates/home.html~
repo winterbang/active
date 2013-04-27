@@ -1,55 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8" />
-<title>个人主页</title>
-<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-<link rel="stylesheet" type="text/css" href="/statics/css/bootstrap.css" />
-<link rel="stylesheet" type="text/css" href="index.css" />
-</head>
-<body>
-
-
-   <div class="container" id="head">
-      <div class="row">
-         <div class="span3">
-         </div>
-         
-         <div class="span6">
-             <a href=""><i class="icon-home"></i>首页</a>
-         </div>
-         <div class="span3">
-            <a href="home.html"><i class="icon-user"></i>个人主页</a>
-            <a href="hold_act.html">组织活动</a>
-            <a href="user_info.html"><i class="icon-cog"></i>管理</a>
-            <a href="">退出</a>
-         </div>
-      </div>
-   </div>
- 
- 
-   <div>
-    	<ul class="breadcrumb">
-    		<li><a href="#">首页</a> <span class="divider">>></span></li>
-    		<li><a href="#">逛逛</a> <span class="divider">>></span></li>
-    		<li class="active"></li>
-    	</ul>
-   </div>
+{% extends "base1.html" %}
+{% block title %}个人主页{% endblock %}
+    {% block content %}
    
    <div class="container">
       <div class="row">
-         <div class="span3" >
-         <img src="image/a.jpg"><br/>
-         <a href="">username</a>
-         <hr/>
+         <div class="span2" >
+            <div style="margin-left:15px;">
+               <div style="background-image:url(/statics/image/bghdimg.jpg);width:100px;height:100px;">
+               <a href="/user/home/{{user.id}}/" ><img src="/static/{{uf.headimg}}" ></a>
+               </div>
+               <a href="">{{user.username}}</a>                       
+            </div>            
+             <hr/>
          <p><a href="">我的说说</a></p>
          <p><a href="">我参加的活动</a></p>
-         <p><a href="">我关注的</a></p>
-         
+         <p><a href="">我关注的好友</a></p>         
          </div>
+         
+         
+         
          <div class="span7">
+           <form method="post" action="">
+              <textarea rows="3"></textarea>
+              <input type="submit" value="发表" class="btn">
+           
+           </form>
          </div>
       </div>
    </div>
-</body>
-</html>
+   {% endblock %}
