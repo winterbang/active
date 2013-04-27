@@ -4,87 +4,127 @@
 	<meta charset="utf-8">
 	<title>首页</title>    
     <link rel="stylesheet" type="text/css" href="/statics/css/bootstrap.css" /> 	
-    
+    <link rel="stylesheet" type="text/css" href="/statics/index.css" />
 </head>
 <body>
 
-	<div id="heada" class="container">
+	<div class="container" id="head">
 		<div class="row">
-		     <div id="log" class="span3"><img src="/statics/image/logt2.jpg" id="imaglog"></div>
-	        <div id="imag" class="span6"><img src="/statics/image/x-3.jpg" id="imaghd"></div>
+		     <div class="span3"><img src="/statics/image/logt2.jpg"></div>
+	        <div class="span6"><img src="/statics/image/x-3.jpg" ></div>
         	<div class="span3">
-	    <form id="dlform" class="form-horizontal">
-        	<input type="text" id="inputEmail" placeholder="账号"><br/>
-            <input type="password" id="inputPassword" placeholder="密码"> <br/>             
-	        <button type="submit" class="btn"> 登陆</button>
-	       	<div id="zcindex">&nbsp;&nbsp;<strong>|</strong>&nbsp;&nbsp;
-                <a href="">注册</a>
-            </div>
-	    </form>
-	    </div>
-	    </div>	         
-    </div>
-
-    <div id="headb" class="container">   <div id="image"></div>
-	         <div id="mulu">
-                <div id="sy"><span><a href="xx.html">首页</a>&nbsp;&nbsp;</span></div>
-                <DIV id="hd"><span ><a href="#">活动</a>&nbsp;&nbsp;</span></DIV>
-                <DIV id="hw"><span ><a href="#">好玩</a>&nbsp;&nbsp;</span></DIV>
-                <DIV id="mw"><span ><a href="#">美味</a>&nbsp;&nbsp;</span></DIV>
-                <DIV id="gg"><span ><a href="#">逛逛</a>&nbsp;&nbsp;</span></DIV>  
-            </div>         
-            <div id="ss">
-                    
+        	   {% if user.is_authenticated %}
+        	   {% else %}
+	         <form class="form-horizontal" id="hdform" method="post" action="/login/">
+        	       <input type="text" id="inputEmail" placeholder="账号" class="ipt"><br/>
+                <input type="password" id="inputPassword" placeholder="密码" class="ipt"> <br/>
+                <div class="row"> 
+                	<div class="span1">            
+	             		<button type="submit" class="btn " > 登陆</button>
+	             	</div>
+	             	<div class="span2" id="idxzc">
+	       	    		<strong>|</strong>
+                		<a href="/register/">注册</a>
+                	</div>
+                </div>
+	         </form>	         	         
+	         {% endif %}
+	      </div>
+	  </div>	         
+   </div>
+   
+    <div id="headb" class="container"> 
+	         <div id="mulu" class="row">
+	             <div class="span4 offset4">
+	               <ul class="nav nav-pills">
+                 		<li class="active">	             
+                			<a href="/index/">首页</a>
+                		</li>
+                		<li class="active">
+               		 	<a href="/huodong/">活动</a>
+                  	</li>  
+                		<li class="active">
+                			<a href="/haowan/">好玩</a>
+                		</li>
+               		<li class="active">
+                			<a href="/meiwei/ ">美味</a>
+                		</li>
+                		<li class="active">
+                			<a href="/gggg/">逛逛</a>
+                		</li>
+                	</ul> 
+                </div>                           
+               <div class="span4">                    
                 <form class="form-search">
+                   
                     <input type="text" class="input-medium search-query" placeholder="好友/活动/好玩/美味">
-                    <button type="submit" class="btn">搜索</button>
-                </form>
-                    
-            </div>                
-            
+                    <input type="submit" class="btn" value="搜索">
+                 
+                </form>                    
+               </div>                
+           </div> 
      </div>
-
-
-    <div id="huodong" class="container">
+ 	<div>
+    	<ul class="breadcrumb">
+    		<li><a href="/index/">首页</a> <span class="divider">/</span></li>
+    		<li><a href="gggg">逛逛</a> <span class="divider">/</span></li>
+    		<li class="active"></li>
+    	</ul>
+   </div>
+   
+   
+   
+    <div class="container">
     	<div id="hdhead">
-    	<span>活动</span>
-    	<a>默认排序</a> <a>人气</a><a>最新</a><a>信用度</a><a>费用</a>     	
-        </div>
+    	  活动
+    	  <a>默认排序</a> <a>人气</a><a>最新</a><a>信用度</a><a>费用</a>     	
+      </div>
     	<hr/>
-    	<div id="disphd">
-	        <div class="dis">
-    	        	<div><img src="/statics/image/a.jpg" class="hdpic"></div>
-                    <div class="title"><a href="">5.1北京一日游</a></div>
-                    <div class="xydu">******</div>
-                    <div class="content">本人想在5.1长假找驴友陪同去</div>
-                    <div class="gzcj">
-                        <div class="gz"><input type="button" value="关注"></div>
-                        <div class="cj"><input type="button" value="参加"></div>
+    	<div class="row">
+	        <div  class="span4">
+	            <div class="row">
+    	        	     <div class="span2"><img src="/statics/image/a.jpg">
+    	        	          <div class="row">    	        	        
+                            <div class="span1"><input type="button" value="关注" class="btn"></div>
+                            <div class="span1"><input type="button" value="参加" class="btn"></div>
+                         </div>                        
+    	        	     </div>
+    	        	     <div class="span2">
+    	        	        <div class="row">
+                       <div class="span1"><a href="">5.1北京一日游</a></div>
+                       <div class="span1">******</div>
+                       </div>                              
+                       <div class="content">本人想在5.1长假找驴友陪同去</div>
                     </div>
-                    <div class="bq">
-                        <div class="bq1">&nbsp;&nbsp;<a href="" class="bqs">标签1</a>&nbsp;&nbsp;</div>
-                        <div class="bq2"><a href="" class="bqs">标签244</a>&nbsp;&nbsp;</div>
-                        <div class="bq3"><a href="" class="bqs">标签3</a>&nbsp;&nbsp;</div>
-                        <div class="bq4"><a href="" class="bqs">标签4</a></div>
+                 </div>    
+                    <div class="row">
+                        <div class="span1"><a href="" class="bqs">标签1</a></div>
+                        <div class="span1"><a href="" class="bqs">标签244</a></div>
+                        <div class="span1"><a href="" class="bqs">标签3</a></div>                        
+                        <div class="span1"><a href="" class="xq">详情>>></a></div>
                     </div>
-                    <a href="" class="xq">详情>>></a>
+                    
     	    </div>
-    	    <div class="dis">
+    	    <div  class="span4">
     	        	<img src="/statics/image/b.jpg" class="hdpic">
-    	    </div >
-                <div class="dis">
+    	    </div>
+          <div  class="span4">
                 	<img src="/statics/image/c.jpg" class="hdpic">
-                </div>
-                <div class="dis">
-                	<img src="/statics/image/d.jpg" class="hdpic">
-                </div>
-                <div class="dis">
-                	<img src="image/e.jpg" class="hdpic">
-                </div>
-                <div class="dis">
-                    <img src="image/f.jpg" class="hdpic">
-                </div>
-                <div class="dis">
+          </div>
+     </div>
+     <div class="row">
+          <div  class="span4">
+               <img src="/statics/image/d.jpg" class="hdpic">
+          </div>
+          <div class="span4">
+               <img src="image/e.jpg" class="hdpic">
+          </div>
+          <div class="span4">
+               <img src="image/f.jpg" class="hdpic">
+          </div>
+      </div>
+      <div class="row">    
+                <div class="span4">
                 	<img src="image/g.jpg" class="hdpic">
                 </div>
                 <div class="dis">
@@ -100,7 +140,7 @@
                 </div>
                 <div class="dis" class="hdpic">
                 </div>	
-        </div>
+       
     </div>
 
 
@@ -109,21 +149,47 @@
 
 
 
-    <div id="haowan" class="container">
-    	<div id="hwhead"> 
-    		<span>好玩</span>
-
-
-    	</div><br/>
-        <hr/>
-        <div id="dishw">
-        </div>
-        
-
+    <div class="container">
+    	<div > 
+    		好玩
+    	</div>
+       <hr/>
+        <div >
+        </div>       
     </div>
 
 
+  <div class="container">
+    <div > 
+    		美味
+    </div>
+       <hr/>
+    <div >
+    </div>  
 
-
+  </div>
+  
+  
+    
+  <div class="container">
+       <div>
+    		逛逛
+       </div>
+       <hr/>
+    <div >
+    </div>  
+  
+  </div>  
+  
+  
+  
+  
+  <div >      
+     <div class="row">
+       <div class="span9 offset1">
+   <a href="" >关于我们</a>&nbsp;|&nbsp;<a href="" > 联系我们 </a>&nbsp;|&nbsp;<a href="" > 服务条款</a>&nbsp;|&nbsp;<a href="" > 常见问题</a>&nbsp;|&nbsp;<a href="" >手机版</a>&nbsp;|&nbsp;<a href="" >客户端</a>|&nbsp;<a href="" >加入我们</a>&nbsp;|&nbsp;<a href="" >给我们建议</a>&nbsp;|&nbsp;<a href="" >友情链接</a>&nbsp;|&nbsp;<a href="" >gerlaor周刊</a>&nbsp;|
+       </div>
+     </div>
+   </div>
 </body>
 </html>

@@ -17,4 +17,11 @@ urlpatterns = patterns('',
     # url(r'^admin/', include(admin.site.urls)),
     url(r'^index/$',index),
     url(r'^register/$',uregist),
+    url(r'^login$',ulogin),
+    url(r'^user/home/$',home),
+    url(r'^user/user_info/$',user_info),
+    url(r'^user/change_passwd/$',change_passwd),
+    url(r'^user/face/$',face),
+    url(r'^user/hold_act/$',hold_act),
+
 )

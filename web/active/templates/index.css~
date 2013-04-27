@@ -1,177 +1,22 @@
-/*#heada{
-		position: absolute;
-		top: 30px;
-		left: 130px;
-		width: 1500px;
+
+#head{
+   margin-top: 25px;	
 	}
-	#log{
-		width: 200px;
-		height: 200px;
-		background-color:green;
+#hdform{
+   margin-top: 20px;	
 	}
-	#imaglog{
-		position: static;	
-		height: 200px;
-	}	        	
-	#imag{
-        
-		width: 680px;
-		height: 170px;
-		background-color: #009922;
-		background-image: url(/image/x-3.jpg);
+input.ipt{
+   margin-bottom: 5px;
+   width: 150px;	
 	}
-	#imaghd{
-		position: static;
-		width: 680px;
-		height: 170px;
+input{
+   width: 180px;	
 	}
-	#log,#imag,#dlform{
-		float: left;
+#two{
+	background-color: #aaaaaa;
+	height: 200px;
 	}
-	#dlform{
-		position: relative;
-		top: 0px;
-		left: 300px;
-        margin: 0px 0px 0px;
-        width: 150px;
-
+#one{
+	background-color: #999999;
+	height: 400px;
 	}
-	#zcindex{
-		position: relative;
-		top: 30px;
-	}
-
-	#headb{
-		position: absolute;
-		top: 210px;
-		left: 50px;
-	}
-    span{
-    	text-align:left; 
-        float: left;   
-        font-family:幼圆;
-        font-size:36px;
-        font-weight:bold;
-        font-style:normal;
-        text-decoration:none;
-        color:#009933;        
-    }
-
-    a{
-
-    	text-decoration: none;
-    }
-    
-    #mulu{
-       position: relative;
-       left: 350px;
-       top: 10px; 
-       width: 1200px;      
-    }
-
-    #huodong{
-
-    	position: absolute;
-    	top: 270px;
-    	left: 130px;
-    	margin: 0 ;    	
-    }
-    #hwhead,#hdhead{
-    	position: relative;
-    	width: 1200px;
-
-    }
-
-    hr{        
-        position: relative; 
-        left: -20px;  
-    }
-    #dishw,#disphd{
-    	position: absolute;
-    	width: 1100px;
-
-    }
-    #one,#two,#three,#four,#five,.dis{
-    	float: left;
-    	width: 350px;
-    	height: 180px;
-    	margin: 15px 10px 5px 5px;
-    	background-color: #009922;
-    	filter:Alpha(opacity=80);
-    	opacity: 0.8;
-
-
-
-    }
-    #haowan{
-    	position: absolute;
-    	top: 1150px;
-    	left: 130px;
-    	margin: 0 auto;
-
-    }
-    #dishw{
-    	height: 500px;
-    }
-    .hdpic{
-    	width: 100px;
-    	position: relative;
-    	left: 5px;
-    	top: 5px;
-    }
-   
-.hdpic,.title,.xydu,.content{
-	float: left;
-}
-
-.title{
-	position: relative;
-	left: 20px;
-	top: 10px;
-	width: 150px;
-	height: 20px;
-	background-color: gray;
-}
-.xydu{
-	position: relative;
-	left: 40px;
-	top: 10px;
-	width: 50px;
-	background-color: gray;
-
-}
-.content{
-	position: relative;
-	left: 20px;
-	top: 30px;
-	width: 220px;
-	height: 90px;
-	background-color: gray;
-}
-.gzcj{
-	position: relative;
-	left: 5px;
-	top: 3px;
-}
-.bq1,.bq2,.bq3,.bq4,.bq,.gz,.cj{
-	float: left;
-}
-.bq{
-	position: relative;
-	top: 18px;
-	left: 25px; 
-	width:300px;
-	height: 20px;
-	
-}
-.bqs{    
-	border-radius: 6px;	
-	background-color: yellow; 
-}
-.xq{
-	position: relative;
-	float: right;
-	right: 5px;
-	bottom: -3px;
-
-}*/

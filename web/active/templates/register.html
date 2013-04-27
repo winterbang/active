@@ -2,94 +2,111 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>注册</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="css/register.css" /> 	
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <style type="text/css">
-    #log,#imag,#dlform{
-        float: left;
-    }
-    #dlform{
-        position: relative;
-        top: 20px;
-        left: 30px;
-        margin: 0px 0px 0px;
-    }
-    input,button{
-        margin-top:10px;
-    }
-    #ss{
-        position: relative;
-        left: 350px;
-        bottom: 5px;
-        margin: 0px 0px 0px;
-    }
-    #zcindex{
-        position: relative;
-        top: -20px;
-        left: 60px;
-    }
-    input{
-        width: 150px;
-        
-    }
-    </style> 	
+	<title>注册</title>    
+    <link rel="stylesheet" type="text/css" href="/statics/css/bootstrap.css" /> 	
+    <link rel="stylesheet" type="text/css" href="/statics/index.css" />
 </head>
 <body>
-
-	<div id="heada">
-		<div id="log"><img src="image/logt2.jpg" id="imaglog"></div>
-	    <div id="imag"><img src="image/x-3.jpg" id="imaghd"></div>
-        
-	    <form id="dlform" class="form-horizontal">
-        	<input type="text" id="inputEmail" placeholder="账号"><br/>
-            <input type="password" id="inputPassword" placeholder="密码"> <br/>             
-	        <button type="submit" class="btn"> 登陆</button>
-	       	<div id="zcindex">&nbsp;&nbsp;<strong>|</strong>&nbsp;&nbsp;
-                <a href="">注册</a>
+ <!-- 网页头部-->
+   <!-- -->
+	<div class="container" id="head">
+		<div class="row">
+		     <div class="span3"><img src="/statics/image/logt2.jpg"></div>
+	        <div class="span6"><img src="/statics/image/x-3.jpg" ></div>
+        	<div class="span3">
+	         <form class="form-horizontal" id="hdform">
+        	       <input type="text" id="inputEmail" placeholder="账号" class="ipt"><br/>
+                <input type="password" id="inputPassword" placeholder="密码" class="ipt"> <br/>
+                <div class="row"> 
+                	<div class="span1">            
+	             		<button type="submit" class="btn " > 登陆</button>
+	             	</div>
+	             	<div class="span2">
+	       	    		<strong>|</strong>
+                		<a href="/register/">注册</a>
+                	</div>
             </div>
-	    </form>	         
+	    </form>
+	    </div>
+	    </div>	         
     </div>
-
-    <div id="headb">   <div id="image"></div>
-	        <div id="mulu">
-                <div id="sy"><span><a href="/index/">首页</a>&nbsp;&nbsp;</span></div>
-                <DIV id="hd"><span ><a href="#">活动</a>&nbsp;&nbsp;</span></DIV>
-                <DIV id="hw"><span ><a href="#">好玩</a>&nbsp;&nbsp;</span></DIV>
-                <DIV id="mw"><span ><a href="#">美味</a>&nbsp;&nbsp;</span></DIV>
-                <DIV id="gg"><span ><a href="#">逛逛</a>&nbsp;&nbsp;</span></DIV>  
-            </div>               
-            <div id="ss">
-                    
+   <!-- 导航条-->
+    <div id="headb" class="container"> 
+	         <div id="mulu" class="row">
+	             <div class="span4 offset4">
+	               <ul class="nav nav-pills">
+                 		<li class="active">	             
+                			<a href="/index/">首页</a>
+                		</li>
+                		<li class="active">
+               		 	<a href="#">活动</a>
+                  	</li>  
+                		<li class="active">
+                			<a href="#">好玩</a>
+                		</li>
+               		<li class="active">
+                			<a href="#">美味</a>
+                		</li>
+                		<li class="active">
+                			<a href="#">逛逛</a>
+                		</li>
+                	</ul> 
+                </div>
+               <!--搜索部分-->                           
+               <div class="span4">                    
                 <form class="form-search">
+                   
                     <input type="text" class="input-medium search-query" placeholder="好友/活动/好玩/美味">
-                    <button type="submit" class="btn">搜索</button>
-                </form>
-                    
-            </div>                
-            
+                    <input type="submit" class="btn" value="搜索">
+                 
+                </form>                    
+               </div>                
+           </div> 
      </div>
-    <div id="zhuce">
-    	<div id="zchead">
-    	<span>注册</span>
-        </div><br/>
-        <hr/>  
-        <div id="regform">
-            <form method="post" >
-                <fieldset>
-                    <legend>必填信息</legend>            	            	
-            	邮箱：<input type="text" class="zc" placeholder="您常用邮箱"><br/>
-            	昵称：<input type="text" class="zc" placeholder="昵称"><br/>
-            	密码：<input type="password" name="password" class="zc" placeholder="可以是字母、下划线和数字"><br/>
-            	
-                <input type="submit" value="注册" class="zcb btn">
-                </fieldset>                 
-            </form>
-        </div>  
+  <!--面包屑-->
+ 	<div>
+    	<ul class="breadcrumb">
+    		<li><a href="#">首页</a> <span class="divider">/</span></li>
+    		<li><a href="#">逛逛</a> <span class="divider">/</span></li>
+    		<li class="active"></li>
+    	</ul>
+   </div>
+   
+ <!--主体-->  
+   <div id="zchead">
+    	     注册
+   </div>
+          <hr/>
+   <!--主体-->
+  <div class="container">
+     <!--注册部分-->
+     <div class="row">
+        <div class="span6">    	            
+           <div class="row">
+        	     <div class="span4 offset2">               
+                 <form method="post" >
+                     {{uf.as_p}}
+                    <input type="submit" value="注册" class="btn">                               
+                  </form>             
+              </div>
+           </div>
+        </div>
+     
+      
+      
+        <div class="span6">
+      
+        </div>                                          
+       </div>    
     </div>
-
-
-
+   <hr/>
+<!-- 网页脚部-->
+   <div >
+     <div class="row">
+       <div class="span9 offset1">
+   <a href="" >关于我们</a>&nbsp;|&nbsp;<a href="" > 联系我们 </a>&nbsp;|&nbsp;<a href="" > 服务条款</a>&nbsp;|&nbsp;<a href="" > 常见问题</a>&nbsp;|&nbsp;<a href="" >手机版</a>&nbsp;|&nbsp;<a href="" >客户端</a>|&nbsp;<a href="" >加入我们</a>&nbsp;|&nbsp;<a href="" >给我们建议</a>&nbsp;|&nbsp;<a href="" >友情链接</a>&nbsp;|&nbsp;<a href="" >gerlaor周刊</a>&nbsp;|
+       </div>
+     </div>
+   </div>
 </body>
 </html>
