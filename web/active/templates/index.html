@@ -15,20 +15,33 @@
       </div>
     	<hr/>
     	<div class="row">
-	        <div  class="span4">
+    	     {% for ac in active %}
+	        <div  class="span4" style="margin-bottom:10px;">
 	            <div class="row">
-    	        	     <div class="span2"><img src="/statics/image/a.jpg" class="img-polaroid">
-    	        	          <div class="row">    	        	        
-                            <div class="span1"><input type="button" value="关注" class="btn"></div>
-                            <div class="span1"><input type="button" value="参加" class="btn" class="span1"></div>
+    	        	     <div class="span2" style="cursor:pointer;float:left;"><img src="/statics/{{ac.picture}}" class="img-polaroid" style="width:100px;">
+    	        	          <div class="row" style="margin-left:0px;">    	        	        
+                            
+                        {% if ac in up.fllowa.all%}
+                        <a href="/flwa/?id={{ac.id}}">取消关注</a>
+                        {%else%}
+                        <a href="/flwa/?id={{ac.id}}" style="background-color:#ffff88">关注</a>
+                        {%endif%}                        
+                        
+                       
+                        {%if ac in up.joina.all%}
+                        <a href="/joia/?id={{ac.id}}" >取消参加</a>
+                        {%else%}
+                        <a href="/joia/?id={{ac.id}}" style="background-color:#ffff88">参加</a>
+                        {%endif%}                        
+                        
                          </div>                        
     	        	     </div>
-    	        	     <div class="span2">
+    	        	     <div class="span2" style="margin-left:-5px;">
     	        	        <div class="row">
-                       <div class="span1"><a href="">5.1北京一日游</a></div>
-                       <div class="span1">******</div>
+                       标题：<a href="/disact/{{ac.id}}/">{{ac.title}}</a><br/>
+                       发起人：<a href="">{{ac.user.username}}</a>
                        </div>                              
-                       <div class="content">本人想在5.1长假找驴友陪同去</div>
+                       <div class="row">活动说明：{{ac.content|truncatechars:40}}</div>
                     </div>
                  </div>    
                     <div class="row">
@@ -37,47 +50,11 @@
                         <div class="span1"><a href="" class="bqs">标签3</a></div>                        
                         <div class="span1"><a href="" class="xq">详情>>></a></div>
                     </div>
-                    
+                 <div style="color:#00ee00;">----------------------------------------------------------</div>   
     	    </div>
-    	    <div  class="span4">
-    	        	<img src="/statics/image/b.jpg"  class="img-rounded">
-    	    </div>
-          <div  class="span4">
-                	<img src="/statics/image/c.jpg" class="img-circle">
-          </div>
-     </div>
-     <div class="row">
-          <div  class="span4">
-               <img src="/statics/image/d.jpg" class="hdpic">
-          </div>
-          <div class="span4">
-               <img src="image/e.jpg" class="img-rounded">
-          </div>
-          <div class="span4">
-               <img src="image/f.jpg" class="hdpic">
-          </div>
+    	    {% endfor%}
+    	    
       </div>
-      <div class="row">    
-                <div class="span4">
-                	<img src="image/g.jpg" class="hdpic">
-                </div>
-                <div class="dis">
-                	<img src="image/h.jpg" class="hdpic">
-                </div>
-                <div class="dis">
-                	<img src="image/i.jpg" class="hdpic">
-                </div>
-                <div class="dis">
-                	<img src="image/j.jpg" class="hdpic">
-                </div>
-                <div class="dis" class="hdpic">
-                </div>
-                <div class="dis" class="hdpic">
-                </div>	
-       
-    </div>
-
-
 
 
 
@@ -88,8 +65,44 @@
     		好玩
     	</div>
        <hr/>
-        <div >
-        </div>       
+     <div class="row">
+      <div class="span1">
+      <h1>旅游</h1>
+      </div>
+      <div class="span2">
+       <img src="/statics/image/wxj.jpg" style="width:150px;">
+      </div>
+      <div class="span4">
+      万兴居，就在鼓楼东大街上，路北，距离鼓楼大约300米,小门脸。门前有一棵大树，所以招牌看的不是很清楚。这里的服务员都是懒洋洋的，只要开着门，什么时候都有饭吃。，要的凉菜不到10元。粥随意喝几碗，便宜！趁着肚圆，穿过烟袋斜街，不上桥。径直往前走。看看原来广化寺，看看那些老四合院……没准还能和在这里安家的罗大佑打一照面。 
+      
+      </div>
+      <div class="span4">
+        <div class="row">
+      <img src="/statics/image/wxj2.jpg" style="width:150px;">
+      <img src="/statics/image/wxj3.jpg" style="width:150px;">
+        </div>
+      </div>    
+    </div>
+    <div class="row">
+      <div class="span1">
+      <h1>运动</h1>
+      </div>
+      <div class="span2">
+       <img src="/statics/image/wxj.jpg" style="width:150px;">
+      </div>
+      <div class="span4">
+      万兴居，就在鼓楼东大街上，路北，距离鼓楼大约300米,小门脸。门前有一棵大树，所以招牌看的不是很清楚。这里的服务员都是懒洋洋的，只要开着门，什么时候都有饭吃。，要的凉菜不到10元。粥随意喝几碗，便宜！趁着肚圆，穿过烟袋斜街，不上桥。径直往前走。看看原来广化寺，看看那些老四合院……没准还能和在这里安家的罗大佑打一照面。 
+      
+      </div>
+      <div class="span4">
+        <div class="row">
+      <img src="/statics/image/wxj2.jpg" style="width:150px;">
+      <img src="/statics/image/wxj3.jpg" style="width:150px;">
+        </div>
+      </div>    
+    </div>
+
+      
     </div>
 
 
@@ -98,8 +111,44 @@
     		美味
     </div>
        <hr/>
-    <div >
-    </div>  
+    <div class="row">
+      <div class="span1">
+      <h1>汤类</h1>
+      </div>
+      <div class="span2">
+       <img src="/statics/image/wxj.jpg" style="width:150px;">
+      </div>
+      <div class="span4">
+      万兴居，就在鼓楼东大街上，路北，距离鼓楼大约300米,小门脸。门前有一棵大树，所以招牌看的不是很清楚。这里的服务员都是懒洋洋的，只要开着门，什么时候都有饭吃。，要的凉菜不到10元。粥随意喝几碗，便宜！趁着肚圆，穿过烟袋斜街，不上桥。径直往前走。看看原来广化寺，看看那些老四合院……没准还能和在这里安家的罗大佑打一照面。 
+      
+      </div>
+      <div class="span4">
+        <div class="row">
+      <img src="/statics/image/wxj2.jpg" style="width:150px;">
+      <img src="/statics/image/wxj3.jpg" style="width:150px;">
+        </div>
+      </div>    
+    </div>
+    
+    <div class="row"><div class="span8 offset1" style="color:#00ee00;">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div></div >
+    <div class="row">
+      <div class="span1">
+      <h1>菜类</h1>
+      </div>
+      <div class="span2">
+       <img src="/statics/image/wxj.jpg" style="width:150px;">
+      </div>
+      <div class="span4">
+      万兴居，就在鼓楼东大街上，路北，距离鼓楼大约300米,小门脸。门前有一棵大树，所以招牌看的不是很清楚。这里的服务员都是懒洋洋的，只要开着门，什么时候都有饭吃。，要的凉菜不到10元。粥随意喝几碗，便宜！趁着肚圆，穿过烟袋斜街，不上桥。径直往前走。看看原来广化寺，看看那些老四合院……没准还能和在这里安家的罗大佑打一照面。 
+      
+      </div>
+      <div class="span4">
+        <div class="row">
+      <img src="/statics/image/wxj2.jpg" style="width:150px;">
+      <img src="/statics/image/wxj3.jpg" style="width:150px;">
+        </div>
+      </div>    
+    </div>    
 
   </div>
   
@@ -110,8 +159,64 @@
     		逛逛
        </div>
        <hr/>
-    <div >
-    </div>  
+     <div class="row">
+           {% for s in say %} 
+          <div class="span6" style="margin-bottom:10px;">
+                        
+             <div class="row">
+               <div class="span2">
+               <div style="background-image:url(/statics/image/bghdimg.jpg);width:100px;height:100px;cursor:pointer">                             
+               <a href="" ><img src="/static/{{s.user.get_profile.headimg}}" ></a>
+               </div>               
+               
+               <a href="/user/home/?id={{s.user.id}}" >{{s.user.username}}</a>&nbsp;&nbsp;&nbsp;
+               
+                {% if s.user in up.fllowp.all%}
+               <a href="/qxp/?id={{s.user.id}}" >取消关注</a>
+                {%else%}
+                    {%if s.user == up.user %}
+                    {%else%}
+               <a href="/flwp/?id={{s.user.id}}" >
+               +关注</a>
+                    {%endif%}
+                 {%endif%}               
+               </a>
+               </div>
+               <div class="span4" style="margin-left:-15px;">                             
+               {{s.content}}<br/>      
+               {{s.time}}
+                 {% for comm in comms%}
+                 <div class="row">
+                   <div class="span3 offset1">
+                     {{comm.content}}<br/>
+                     {{comm.time}}
+                    </div>                 
+                 </div>
+                 {%endfor%}
+                 
+                 <div class="row" style="display:none" id="hideform{{s.id}}">
+                  <div class="span4">
+                  <form action="/saycmm/?say_id={{s.id}}" method="post">
+                  <textarea rows="3" class="span3" name="content"></textarea><a onclick="fuyuan({{s.id}});">收起</a>
+                  <br/>
+                  <button>发表</button>
+                  </form>
+                   </div>
+                </div>
+                
+                 <div class="row">
+                    <div class="span1 offset3">
+                    <button onclick="displfm({{s.id}});">评论</button>
+                    </div>
+                 </div>
+               </div>           
+             </div>
+             
+            <div style="color:#00ee00;">----------------------------------------------------------------------------------------</div>   
+         </div>
+          {% endfor%} 
+              
+        </div>  
   
   </div>  
 {%endblock%} 

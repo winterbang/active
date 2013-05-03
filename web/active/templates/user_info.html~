@@ -3,29 +3,32 @@
     {% block content %}
    <div class="container">
       <div class="row">
-         <div class="span3" id="one">
-         <p><a href="/user/user_info/">个人资料</a></p>
-         <p><a href="/user/face/">编辑头像</a></p>
-         <a href="/user/change_passwd/">修改密码</a>
-         <a href=""></a>
-         <a href=""></a>
+         <div class="span3" >
+            <div style="margin-left:20px;">
+            <p><a href="/user/user_info/">修改资料</a></p>
+            <p><a href="/user/face/">编辑头像</a></p>
+             <a href="/user/change_passwd/">修改密码</a>
+            </div>
          
          </div>
-         <div class="span9" id="grzl">
-         个人资料
+         <div class="span9" >
+         修改资料
          <hr/>
-         <form method="post" action="">
+         <form method="post" action="//">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;昵称：<input type="text"><br/>
             出生日期：<input type="text"><br/>           
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;性别：<label class="radio inline">
-                    <input type="radio" name="op"  >
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            性别：<label class="radio inline">
+                    <input type="radio" name="op" value="m" >
                      男
                  </label>
                  <label class="radio inline">
-                    <input type="radio" name="op" >
+                    <input type="radio" name="op" value"w">
                     女
                  </label>
                  <br/>
+             个人标签：&nbsp;<span id="tag"></span>&nbsp;&nbsp;<a onclick="addtag();" >+添加标签<i class="icon-tag"></i></a>
+              <br/><input type="hidden" name="tag">             
             <input type="submit" value="保存" class="btn btn-info">         
          
          </form>

@@ -4,15 +4,14 @@
   
    <div class="container">
       <div class="row">
-         <div class="span3" id="one">
+         <div class="span3" >
          <p><a href="/user/user_info/">个人资料</a></p>
          <p><a href="/user/face/">编辑头像</a></p>
          <a href="/user/change_passwd/">修改密码</a>
-         <a href=""></a>
-         <a href=""></a>
+         
          
          </div>
-         <div class="span9" id="two">
+         <div class="span9" >
          {% if pd == 1 %}
          头像上传错误
          {% elif pd == 2 %}
@@ -28,9 +27,9 @@
                   <input type="submit" value="保存" class="btn btn-info">                 
                  </form>
                </div>
-               {% if pd == 2 %}
+               {% if up.headimg %}
                <div class="span3">
-                 <img src="/static/{{uf.headimg}}">
+                 <img src="/static/{{up.headimg}}">
                </div>
                {% endif %}
            </div>         
